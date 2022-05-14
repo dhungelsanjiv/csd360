@@ -1,0 +1,79 @@
+<!--
+For this assignment, create a function titled counter that takes an array of numbers as the parameter.
+ The function is then to return an array holding the numbers of negative elements, zeros,
+ and values greater than zero in the given array parameter.
+-->
+<!DOCTYPE html>
+<!--
+
+       Sanjiv Dhungel
+       May 1, 2022
+       Module 9 Programming Assignment
+       Bellevue University
+
+    -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name = "Author" content = "Sanjiv Dhungel">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet"  href="style2.css">
+    <title>Module 9 Assignment </title>
+</head>
+<body>
+    <header class="banner">
+        <h1>Counter taking an array of numbers as Parameter </h1>
+    </header>
+    <section>
+        <form>
+            <p>Please enter list of Numbers separated by comma</p>
+            a: <input type="text" name=" stringArray" id="stringArray"><br>
+            
+            <button onclick="process(stringArray)">count</button>
+        </form>
+    </section>
+    
+   
+    <script>
+        var counts = [0,0,0];
+        console.log('starting script');
+        function process(var1){
+            var stringArray = var1.value.split(",");
+            console.log("An array with the entered numbers is: " + stringArray);
+            alert("An array with the entered numbers is:: " + stringArray);
+            var numberArray = [];
+            for (const element of stringArray) {
+                                  numberArray.push(Number(element)) 
+                                }
+                console.log(numberArray);
+                alert(numberArray)
+                counts = counter(numberArray)
+                document.write("Number of  negative elements: " + counts[0] + "</br>");
+                document.write("Number of positive elements: " + counts[1] + "</br>");
+                document.write("Numbers of total zeros: " + counts[2] + "</br>");
+    
+                
+            }
+            function counter(var1) {
+                var givenArray = [0,0,0];
+                for (const element of var1) {
+                    if (element < 0) {
+                        givenArray[0]++
+                    }
+                    else if (element > 0) {
+                        givenArray[1]++
+                    }
+                    else  {
+                        givenArray[2]++
+
+                   }
+                }
+                alert(givenArray)
+                return givenArray
+            }
+
+</script>    
+</body>
+</html>
